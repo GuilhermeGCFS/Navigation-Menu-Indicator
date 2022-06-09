@@ -18,7 +18,7 @@ header {
 
 .navigation {
   width: 400px;
-  height: 70px;
+  height: 80px;
   background: #fff;
   display: flex;
   justify-content: center;
@@ -62,7 +62,7 @@ header {
   color: var(--clr);
 }
 
-.navigation ul li:hover a .icon {
+.navigation ul li.active a .icon {
   transform: translateY(-35px);
 }
 
@@ -77,7 +77,45 @@ header {
   transform: translateY(20px);
 }
 
-.navigation ul li:hover a .text {
+.navigation ul li.active a .text {
   opacity: 1;
-  transform: translateY(10px);
+  transform: translateY(15px);
 }
+
+.indicator {
+  position: absolute;
+  top: -50%;
+  left: 5%;
+  width: 70px;
+  height: 70px;
+  background: #29fd53;
+  border-radius: 50%;
+  border: 6px solid var(--clr);
+  transition: 0.5s;
+}
+
+.indicator::before {
+  content: '';
+  position: absolute;
+  top: 52%;
+  left: -24px;
+  width: 22px;
+  height: 25px;
+  background: transparent;
+  border-top-right-radius: 20px;
+  box-shadow: 0px -13px 0 0 var(--clr);
+}
+
+.indicator::after {
+  content: '';
+  position: absolute;
+  top: 49%;
+  right: -29px;
+  width: 26px;
+  height: 25px;
+  background: transparent;
+  border-top-left-radius: 20px;
+  box-shadow: 0px -13px 0 0 var(--clr);
+}
+
+.navigation ul li.active
